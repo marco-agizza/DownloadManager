@@ -10,10 +10,11 @@ import SwiftUI
 @main
 struct DownloadManagerApp: App {
     let persistenceController = PersistenceController.shared
-
+    let downloadManager = DownloadFileManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(downloadManager: downloadManager)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
