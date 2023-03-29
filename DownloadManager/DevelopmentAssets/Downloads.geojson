@@ -1,0 +1,20 @@
+[
+    {
+        "name":"File sample"
+        "fileDimension":"52_428_800"
+        "sourceURL":"https://decapoda.nhm.org/pdfs/25900/25900.pdf"
+        "progress":"1"
+        "errorOccurred":"false"
+        "alertMessage":""
+    },
+    {
+        "name":"Foto sample"
+        "fileDimension":"140_634"
+        "sourceURL":"https://www.greenstyle.it/app/uploads/2022/07/barboncino-nano-albicocca.jpg"
+        "progress":"0"
+        "errorOccurred":"true"
+        "alertMessage":""
+    }
+]
+
+
