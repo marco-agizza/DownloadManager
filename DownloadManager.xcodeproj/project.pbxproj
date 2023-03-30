@@ -20,6 +20,7 @@
 		52250E8029D41EAE000CFE40 /* DownloadsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52250E7F29D41EAE000CFE40 /* DownloadsListView.swift */; };
 		52250E8229D41EE0000CFE40 /* DownloadStarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52250E8129D41EE0000CFE40 /* DownloadStarterView.swift */; };
 		52250E8829D433C0000CFE40 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52250E8729D433C0000CFE40 /* SampleData.swift */; };
+		5253DFEE29D4713000E895D0 /* SingleDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253DFED29D4713000E895D0 /* SingleDownloadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		52250E8129D41EE0000CFE40 /* DownloadStarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadStarterView.swift; sourceTree = "<group>"; };
 		52250E8529D427A0000CFE40 /* Downloads.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Downloads.geojson; sourceTree = "<group>"; };
 		52250E8729D433C0000CFE40 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		5253DFED29D4713000E895D0 /* SingleDownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDownloadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +108,9 @@
 				520AAE6829CC4C990096F095 /* ContentView.swift */,
 				52250E8129D41EE0000CFE40 /* DownloadStarterView.swift */,
 				52250E7F29D41EAE000CFE40 /* DownloadsListView.swift */,
-				520AAE8129CE0DCC0096F095 /* ButtonStyles.swift */,
+				5253DFED29D4713000E895D0 /* SingleDownloadView.swift */,
 				52250E7D29D31990000CFE40 /* DownloadProgressView.swift */,
+				520AAE8129CE0DCC0096F095 /* ButtonStyles.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5253DFEE29D4713000E895D0 /* SingleDownloadView.swift in Sources */,
 				520AAE7029CC4C9A0096F095 /* Persistence.swift in Sources */,
 				52250E8029D41EAE000CFE40 /* DownloadsListView.swift in Sources */,
 				52250E8229D41EE0000CFE40 /* DownloadStarterView.swift in Sources */,

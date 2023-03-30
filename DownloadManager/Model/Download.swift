@@ -7,35 +7,31 @@
 
 import Foundation
 
-class Download: NSObject, URLSessionDownloadDelegate, Identifiable, Codable {
+class Download: NSObject, URLSessionDownloadDelegate, Identifiable, ObservableObject {
     var id: UUID
-    private let name: String
-    private let creationDate: Date
-    private let fileDimension: Double
-    private let sourceURL: String
-    private var progress: CGFloat
-    private var errorOccurred: Bool = true
+    let name: String
+    let creationDate: Date
+    var fileDimension: Double = 0.0
+    @Published var progress: CGFloat
+    var errorOccurred: Bool = false
+    var completed: Bool = false
+    private let sourceURL: URL
     private var alertMessage: String = ""
     //private let spentTime: Double
     
     
-    init (id: UUID = UUID() , pathName: String, fileDimension: Double, sourceURL: String) {
+    init (id: UUID = UUID() , pathName: String, sourceURL: URL) {
         self.id = id
         self.name = pathName
         self.creationDate = Date.now
-        self.fileDimension = fileDimension
         self.sourceURL = sourceURL
         self.progress = 0
     }
     
     func startDownload() {
-        guard let validURL = URL(string: sourceURL) else {
-            errorOccurred.toggle()
-            return
-        }
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         
-        let downloadTaskSession = session.downloadTask(with: validURL)
+        let downloadTaskSession = session.downloadTask(with: sourceURL)
         downloadTaskSession.resume()
     }
     
@@ -58,6 +54,9 @@ class Download: NSObject, URLSessionDownloadDelegate, Identifiable, Codable {
         
         do {
             try FileManager.default.copyItem(at: location, to: destinationURL)
+            print("download completed")
+            completed.toggle()
+            print("for this reasone now the value of completed is: \(completed)")
         } catch {
             self.reportError(errorMessage: "Please try again later")
         }
@@ -67,6 +66,7 @@ class Download: NSObject, URLSessionDownloadDelegate, Identifiable, Codable {
         let progress = CGFloat(totalBytesWritten) / CGFloat(totalBytesExpectedToWrite)
         
         DispatchQueue.main.async {
+            print("progress")
             self.progress = progress
         }
     }

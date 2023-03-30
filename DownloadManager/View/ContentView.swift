@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @EnvironmentObject private var downloadManager: DownloadOrganizer
+    @EnvironmentObject private var downloadOrganizer: DownloadOrganizer
     
     @State private var selection: Tab = .starter
     

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DownloadStarterView: View {
+    @EnvironmentObject private var downloadOrganizer: DownloadOrganizer
     @State private var urlLink: String = ""
     
     var body: some View {
@@ -27,7 +28,7 @@ struct DownloadStarterView: View {
                             .padding(.vertical, 20)
                         HStack {
                             Button(
-                                action: {/*downloadManager.startDownload(downloadURL: urlLink)*/},
+                                action: {downloadOrganizer.startNewDownload(sourceURL: urlLink)},
                                 label: {Text("Download")}
                             )
                             .buttonStyle(PrimaryRegularButtonStyle())
@@ -43,18 +44,18 @@ struct DownloadStarterView: View {
                 .navigationTitle("Downloader")
                 .padding()
             }
-            /*.alert(
-                isPresented: $downloadManager.showAlert,
+            .alert(
+                isPresented: $downloadOrganizer.errorOccurred,
                 content: {
                     Alert(title: Text("Error message"),
-                          message: Text(downloadManager.alertMessage),
+                          message: Text(downloadOrganizer.errorMessage),
                           dismissButton: .destructive(
                             Text("Got it"),
                             action: {}
                           )
                     )
                 }
-            )*/
+            )
         }
 }
 

@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct DownloadsListView: View {
+    @EnvironmentObject private var downloadOrganizer: DownloadOrganizer
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(spacing: 20) {
+                    ForEach($downloadOrganizer.downloads) { $download in
+                        SingleDownloadView(download: download)
+                    }
+                }
+            }
+            .navigationTitle("Previous downloads")
+        }
     }
 }
 
