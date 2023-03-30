@@ -16,26 +16,26 @@ struct DownloadProgressView: View {
             VStack(spacing: 15) {
                 ZStack {
                     Circle()
-                        .fill(Color.gray.opacity(0.3))
+                        .fontWeight(.bold)
+                        .font(.title)
+                        .foregroundColor(Color.gray.opacity(0.3))
                     
                     ProgressShape(progress: progress)
-                        .fill(Color.gray.opacity(0.45))
+                        .fill(Color.gray.opacity(0.5))
                         .rotationEffect(.init(degrees: -90))
+                        .fontWeight(.bold)
+                        .font(.title)
                     Button(
                         action: {/*code to stop the download*/},
                         label: {
                             Text(Image(systemName: "stop.fill"))
-                                .font(.title)
+                                .font(.headline)
                                 .fontWeight(.semibold)
                         }
                     )
                 }
-                .frame(width: 70, height: 70)
+                .frame(width: 40, height: 40)
             }
-            .padding(.vertical, 20)
-            .padding(.horizontal, 50)
-            .background(Color.white)
-            .cornerRadius(10)
         }
     }
 }
@@ -53,7 +53,7 @@ struct ProgressShape: Shape {
         return Path { path in
             path.move(to: CGPoint(x: rect.midX, y: rect.midY))
             
-            path.addArc(center: CGPoint(x: rect.midX, y: rect.midY), radius: 35, startAngle: .zero, endAngle: .init(degrees: progress * 360), clockwise: false)
+            path.addArc(center: CGPoint(x: rect.midX, y: rect.midY), radius: 20, startAngle: .zero, endAngle: .init(degrees: progress * 360), clockwise: false)
         }
     }
 }

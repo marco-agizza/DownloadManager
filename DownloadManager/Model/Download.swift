@@ -10,7 +10,7 @@ import Foundation
 class Download: NSObject, URLSessionDownloadDelegate, Identifiable, ObservableObject {
     var id: UUID
     let name: String
-    let creationDate: Date
+    let creationDate: String
     var fileDimension: Double = 0.0
     @Published var progress: CGFloat
     var errorOccurred: Bool = false
@@ -23,7 +23,7 @@ class Download: NSObject, URLSessionDownloadDelegate, Identifiable, ObservableOb
     init (id: UUID = UUID() , pathName: String, sourceURL: URL) {
         self.id = id
         self.name = pathName
-        self.creationDate = Date.now
+        self.creationDate = takeMyFormatter().string(from: Date.now)
         self.sourceURL = sourceURL
         self.progress = 0
     }

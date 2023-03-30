@@ -21,6 +21,7 @@
 		52250E8229D41EE0000CFE40 /* DownloadStarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52250E8129D41EE0000CFE40 /* DownloadStarterView.swift */; };
 		52250E8829D433C0000CFE40 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52250E8729D433C0000CFE40 /* SampleData.swift */; };
 		5253DFEE29D4713000E895D0 /* SingleDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253DFED29D4713000E895D0 /* SingleDownloadView.swift */; };
+		5253DFF029D5BD5C00E895D0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253DFEF29D5BD5C00E895D0 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		52250E8529D427A0000CFE40 /* Downloads.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Downloads.geojson; sourceTree = "<group>"; };
 		52250E8729D433C0000CFE40 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		5253DFED29D4713000E895D0 /* SingleDownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDownloadView.swift; sourceTree = "<group>"; };
+		5253DFEF29D5BD5C00E895D0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				52250E8729D433C0000CFE40 /* SampleData.swift */,
+				5253DFEF29D5BD5C00E895D0 /* Utils.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				52250E8029D41EAE000CFE40 /* DownloadsListView.swift in Sources */,
 				52250E8229D41EE0000CFE40 /* DownloadStarterView.swift in Sources */,
 				520AAE6929CC4C990096F095 /* ContentView.swift in Sources */,
+				5253DFF029D5BD5C00E895D0 /* Utils.swift in Sources */,
 				520AAE6729CC4C990096F095 /* DownloadManagerApp.swift in Sources */,
 				520AAE7F29CC54A70096F095 /* Download.swift in Sources */,
 				520AAE8229CE0DCC0096F095 /* ButtonStyles.swift in Sources */,

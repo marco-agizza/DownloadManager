@@ -14,10 +14,15 @@ struct SingleDownloadView: View {
         HStack {
             VStack (alignment: .leading) {
                 Text(download.name)
+                    .fontWeight(.bold)
                 Text(download.creationDate.description)
             }
+            Spacer()
             if download.progress == 1 {
                 Text(Image(systemName: "checkmark.circle.fill"))
+                    .foregroundColor(.green)
+                    .fontWeight(.bold)
+                    .font(.title)
             } else {
                 switch download.errorOccurred {
                 case true:
@@ -30,6 +35,7 @@ struct SingleDownloadView: View {
                 }
             }
         }
+        .padding(.horizontal)
     }
 }
 

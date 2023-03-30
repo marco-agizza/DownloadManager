@@ -59,8 +59,10 @@ struct DownloadStarterView: View {
         }
 }
 
+/*
 struct DownloadStarterView_Previews: PreviewProvider {
     static var previews: some View {
         DownloadStarterView()
     }
 }
+*/

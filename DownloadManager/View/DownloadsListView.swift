@@ -24,8 +24,10 @@ struct DownloadsListView: View {
     }
 }
 
+/*
 struct DownloadsListView_Previews: PreviewProvider {
     static var previews: some View {
         DownloadsListView()
     }
 }
+*/
