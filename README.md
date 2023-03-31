@@ -1,4 +1,4 @@
-# DownloadMenager
+# DownloadManager
 ## About
 This project demonstrates the use of URLSessionDownloadDelegate and URLSession in a SwiftUI application to allow users to download files from the internet while displaying the progress of the download through a progress bar.
 
