@@ -32,6 +32,16 @@ struct SingleDownloadView: View {
                         .font(.title)
                 case false:
                     DownloadProgressView(progress: download.progress)
+                        .overlay() {
+                            Button(
+                                action: {download.stopDownload()},
+                                label: {
+                                    Text(Image(systemName: "stop.fill"))
+                                        .font(.headline)
+                                        .fontWeight(.semibold)
+                                }
+                            )
+                        }
                 }
             }
         }

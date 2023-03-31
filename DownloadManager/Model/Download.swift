@@ -17,22 +17,27 @@ class Download: NSObject, URLSessionDownloadDelegate, Identifiable, ObservableOb
     var completed: Bool = false
     private let sourceURL: URL
     private var alertMessage: String = ""
+    var downloadSession: URLSession?
     //private let spentTime: Double
     
     
     init (id: UUID = UUID() , pathName: String, sourceURL: URL) {
         self.id = id
-        self.name = pathName
+        self.name = sourceURL.lastPathComponent
         self.creationDate = takeMyFormatter().string(from: Date.now)
         self.sourceURL = sourceURL
         self.progress = 0
     }
     
     func startDownload() {
-        let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
+        downloadSession = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         
-        let downloadTaskSession = session.downloadTask(with: sourceURL)
+        let downloadTaskSession = downloadSession!.downloadTask(with: sourceURL)
         downloadTaskSession.resume()
+    }
+    
+    func stopDownload() {
+        
     }
     
     func reportError(errorMessage: String) {
@@ -47,16 +52,15 @@ class Download: NSObject, URLSessionDownloadDelegate, Identifiable, ObservableOb
         }
         
         let saveDirectoryPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        
+        print("I'm going to save the file in \(saveDirectoryPath)")
         let destinationURL = saveDirectoryPath.appendingPathComponent(url.lastPathComponent)
         
         try? FileManager.default.removeItem(at: destinationURL)
         
         do {
             try FileManager.default.copyItem(at: location, to: destinationURL)
-            print("download completed")
             completed.toggle()
-            print("for this reasone now the value of completed is: \(completed)")
+            print("success")
         } catch {
             self.reportError(errorMessage: "Please try again later")
         }

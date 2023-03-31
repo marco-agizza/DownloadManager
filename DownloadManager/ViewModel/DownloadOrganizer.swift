@@ -31,7 +31,8 @@ class DownloadOrganizer: ObservableObject {
     
     // MARK: - File I/O
 
-    /*bfunc refreshOrganizer() {
+    /*
+    func refreshOrganizer() {
         let defaultDownloads = defaultDownloads().shuffled()
         for download in defaultDownloads {
             download.id = UUID()
@@ -41,5 +42,6 @@ class DownloadOrganizer: ObservableObject {
 
     func defaultDownloads() -> [Download] {
         DownloadManager.load("Downloads.json")
-    }*/
+    }
+    */
 }

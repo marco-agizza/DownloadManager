@@ -25,14 +25,6 @@ struct DownloadProgressView: View {
                         .rotationEffect(.init(degrees: -90))
                         .fontWeight(.bold)
                         .font(.title)
-                    Button(
-                        action: {/*code to stop the download*/},
-                        label: {
-                            Text(Image(systemName: "stop.fill"))
-                                .font(.headline)
-                                .fontWeight(.semibold)
-                        }
-                    )
                 }
                 .frame(width: 40, height: 40)
             }
